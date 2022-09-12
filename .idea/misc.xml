@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BancoUTN/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/antof/Documents/GitHub/BancoUTN/app/src/main/res/layout/activity_construir_plazo_fijo.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/antof/Documents/GitHub/BancoUTN/app/src/main/res/layout/activity_main.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/antof/Documents/GitHub/BancoUTN/app/src/main/res/layout/activity_simular_plazo_fijo.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
