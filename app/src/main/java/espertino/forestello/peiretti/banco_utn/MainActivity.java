@@ -41,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(simular);
             }
         });
+
+        //setup boton constituir
+        Button botonConstituir = (Button) binding.buttonConstituir;
+        botonConstituir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+
         
     }
 }

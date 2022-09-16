@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -85,6 +86,20 @@ public class SimularPlazoFijo extends AppCompatActivity {
                 validarCalcularYActualizarTv();
             }
         });
+
+        //setup boton confirmar
+        /*Button botonConfirmar = (Button) binding.buttonConfirmar;
+        SimularPlazoFijo ctx = this;
+
+        botonConfirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent confirmar = new Intent(ctx,MainActivity.class);
+                confirmar.putExtra("dias", String.valueOf(sb.getProgress()));
+                confirmar.putExtra("capital", binding.etCapital.getText().toString());
+                startActivity(confirmar);
+            }
+        });*/
     }
 
     private void validarCalcularYActualizarTv(){
