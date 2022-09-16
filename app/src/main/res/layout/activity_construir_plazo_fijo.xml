@@ -116,7 +116,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_simular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SIMULAR" />
@@ -130,7 +130,7 @@
         android:paddingBottom="15dp">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button_confirmar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
