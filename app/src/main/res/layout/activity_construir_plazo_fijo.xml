@@ -130,11 +130,12 @@
         android:paddingBottom="15dp">
 
         <Button
-            android:id="@+id/button_confirmar"
+            android:id="@+id/button_constituir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="CONFIRMAR" />
+            android:text="CONSTITUIR"
+            android:enabled="false"/>
     </LinearLayout>
 
 </LinearLayout>
