@@ -1,4 +1,4 @@
-<h2>Desarrollo de aplicaciones móviles - Trabajo práctico 1</h2>
+<h2>Desarrollo de aplicaciones móviles - Laboratorio 1</h2>
 Universidad Tecnologica Nacional - Facultad Regional Santa Fe
 <h2>Integrantes:</h2>
 <ul>
