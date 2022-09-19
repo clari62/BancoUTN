@@ -1,5 +1,9 @@
 package espertino.forestello.peiretti.banco_utn;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,7 +44,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent simular = new Intent(ctx,SimularPlazoFijo.class);
                 simular.putExtra("moneda",(String) spinner.getSelectedItem());
-                startActivity(simular);
+
+
+
+
+                ActivityResultLauncher<Intent> startActivityIntent = registerForActivityResult(
+                        new ActivityResultContracts.StartActivityForResult(),
+                        new ActivityResultCallback<ActivityResult>() {
+                            @Override
+                            public void onActivityResult(ActivityResult result) {
+                                // Add same code that you want to add in onActivityResult method
+                            }
+                        });
+                startActivityIntent.launch(simular);
+
             }
         });
 

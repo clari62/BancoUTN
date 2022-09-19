@@ -2,6 +2,7 @@ package espertino.forestello.peiretti.banco_utn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -88,18 +89,19 @@ public class SimularPlazoFijo extends AppCompatActivity {
         });
 
         //setup boton confirmar
-        /*Button botonConfirmar = (Button) binding.buttonConfirmar;
+        Button botonConfirmar = (Button) binding.buttonConfirmar;
         SimularPlazoFijo ctx = this;
 
         botonConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent confirmar = new Intent(ctx,MainActivity.class);
-                confirmar.putExtra("dias", String.valueOf(sb.getProgress()));
-                confirmar.putExtra("capital", binding.etCapital.getText().toString());
-                startActivity(confirmar);
+                Intent resultado =new Intent();
+                resultado.putExtra("capital", binding.etCapital.getText().toString());
+                resultado.putExtra("dias", binding.seekBar.getProgress());
+                setResult(Activity.RESULT_OK,resultado);
+                finish();
             }
-        });*/
+        });
     }
 
     private void validarCalcularYActualizarTv(){
