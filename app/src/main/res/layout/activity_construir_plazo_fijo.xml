@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:text="CONSTITUIR"
-            android:enabled="true"/>
+            android:enabled="false"/>
     </LinearLayout>
 
 </LinearLayout>

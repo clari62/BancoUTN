@@ -54,7 +54,7 @@ public class SimularPlazoFijo extends AppCompatActivity {
         });
 
         //listener de los editText
-        ((EditText) binding.etTasaNominal).addTextChangedListener(new TextWatcher() {
+        TextWatcher tw = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
             @Override
@@ -64,29 +64,10 @@ public class SimularPlazoFijo extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 validarCalcularYActualizarTv();
             }
-        });
-        ((EditText) binding.etTasaEfectiva).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                validarCalcularYActualizarTv();
-            }
-        });
-        ((EditText) binding.etCapital).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                validarCalcularYActualizarTv();
-            }
-        });
+        };
+        ((EditText) binding.etTasaNominal).addTextChangedListener(tw);
+        ((EditText) binding.etTasaEfectiva).addTextChangedListener(tw);
+        ((EditText) binding.etCapital).addTextChangedListener(tw);
 
         //setup boton confirmar
         Button botonConfirmar = (Button) binding.buttonConfirmar;
@@ -97,7 +78,9 @@ public class SimularPlazoFijo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent resultado =new Intent();
                 resultado.putExtra("capital", binding.etCapital.getText().toString());
-                resultado.putExtra("dias", binding.seekBar.getProgress());
+                int dias=binding.seekBar.getProgress();
+                resultado.putExtra("dias", dias+(dias>1?" días":" día"));
+                Log.i("algo","ANDAAAAAA");
                 setResult(Activity.RESULT_OK,resultado);
                 finish();
             }
