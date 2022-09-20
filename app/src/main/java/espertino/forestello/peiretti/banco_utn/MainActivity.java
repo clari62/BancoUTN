@@ -109,4 +109,19 @@ public class MainActivity extends AppCompatActivity {
         binding.etApellido.addTextChangedListener(tw);
 
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("buttonConstituir",binding.buttonConstituir.isEnabled());
+        outState.putString("dias",dias);
+        outState.putString("capital",capital);
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        binding.buttonConstituir.setEnabled(savedInstanceState.getBoolean("buttonConstituir"));
+        dias=savedInstanceState.getString("dias");
+        capital=savedInstanceState.getString("capital");
+    }
 }

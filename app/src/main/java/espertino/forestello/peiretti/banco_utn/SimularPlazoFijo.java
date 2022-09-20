@@ -109,7 +109,7 @@ public class SimularPlazoFijo extends AppCompatActivity {
         Double ganancia = Double.valueOf(tasaEfectiva)*Double.valueOf(capital)*dias/(365*100);
         Double gananciaAnual = ganancia*365/dias;
         //seteo
-        ((TextView)binding.tvPlazo).setText("Plazo: "+ String.valueOf(dias)+ ((dias>1)?"días":"día"));
+        ((TextView)binding.tvPlazo).setText("Plazo: "+ String.valueOf(dias)+ ((dias>1)?" días":" día"));
         ((TextView)binding.tvCapital).setText("Capital: $"+capital);
         ((TextView)binding.tvIntereses).setText("Intereses ganados: $"+ganancia.toString());
         ((TextView)binding.tvMonto).setText("Monto total: $"+String.valueOf(Double.valueOf(capital)+ganancia));
@@ -118,4 +118,16 @@ public class SimularPlazoFijo extends AppCompatActivity {
         //habilitar boton
         ((Button) binding.buttonConfirmar).setEnabled(true);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("buttonConfirmar",binding.buttonConfirmar.isEnabled());
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        binding.buttonConfirmar.setEnabled(savedInstanceState.getBoolean("buttonConfirmar"));
+    }
+
 }
